@@ -1,68 +1,99 @@
-body {
-    background-color: teal;
-    font-family: 'MS Sans Serif', Arial, sans-serif;
+/* Desktop Styles */
+body, html {
     margin: 0;
-    padding: 20px;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    font-family: 'MS Sans Serif', Arial, sans-serif;
+    background-color: #008080;
+    overflow: hidden;
 }
 
+.desktop {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-image: url('backgrounds/win98_wallpaper.png'); /* Optional background image */
+    background-size: cover;
+}
+
+.icon {
+    width: 72px;
+    margin: 10px;
+    text-align: center;
+    color: white;
+    font-size: 12px;
+    cursor: default;
+    display: inline-block;
+}
+
+.icon img {
+    width: 48px;
+    height: 48px;
+}
+
+.icon span {
+    display: block;
+    margin-top: 5px;
+}
+
+.icon:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+/* Window Styles */
 .window {
+    position: absolute;
     width: 400px;
-    margin: auto;
-    border: 2px solid black;
-    box-shadow: 5px 5px gray;
-    background-color: silver;
+    border: 2px solid #000;
+    background-color: #C0C0C0;
+    box-shadow: 5px 5px 0px #404040;
 }
 
 .title-bar {
-    background: linear-gradient(to right, navy, blue);
-    color: white;
-    height: 24px;
+    background: linear-gradient(to right, #000080, #0000FF);
+    color: #FFFFFF;
+    height: 20px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0 2px;
+    cursor: move;
+    user-select: none;
 }
 
 .title-bar-text {
-    font-weight: bold;
     padding-left: 5px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.title-bar-controls {
+    display: flex;
+    margin-right: 2px;
 }
 
 .title-bar-controls button {
     width: 16px;
     height: 14px;
-    background-color: silver;
-    border: 1px solid black;
+    background-color: #C0C0C0;
+    border: 1px solid #000;
     margin-left: 2px;
+    padding: 0;
     cursor: pointer;
 }
 
-.title-bar-controls button:active {
-    border: 1px inset black;
+.title-bar-controls button:hover {
+    background-color: #FFFFFF;
 }
 
 .window-body {
     padding: 10px;
+    background-color: #FFFFFF;
+    height: calc(100% - 20px);
+    overflow: auto;
 }
 
-.window-body p {
-    margin: 10px 0;
-}
-
-.buttons {
-    display: flex;
-    justify-content: space-around;
-    margin-top: 20px;
-}
-
-button {
-    font-size: 14px;
-    padding: 5px 10px;
-    background-color: silver;
-    border: 2px outset buttonface;
-    cursor: pointer;
-}
-
-button:active {
-    border: 2px inset buttonface;
+/* Bring focused window to front */
+.window.active {
+    z-index: 10;
 }

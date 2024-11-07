@@ -2,29 +2,76 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Andy Dai - Home</title>
+    <title>Your Name - Windows 98 Desktop</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="window">
+
+    <!-- Desktop -->
+    <div class="desktop">
+
+        <!-- Desktop Icons -->
+        <div class="icon" data-window="#window-resume">
+            <img src="icons/resume.png" alt="Resume Icon">
+            <span>Resume</span>
+        </div>
+        <div class="icon" data-window="#window-projects">
+            <img src="icons/projects.png" alt="Projects Icon">
+            <span>Projects</span>
+        </div>
+        <div class="icon" data-window="#window-contact">
+            <img src="icons/contact.png" alt="Contact Icon">
+            <span>Contact Me</span>
+        </div>
+
+    </div>
+
+    <!-- Application Windows -->
+    <div id="window-resume" class="window" style="display: none;">
         <div class="title-bar">
-            <div class="title-bar-text">Welcome to My Site</div>
+            <div class="title-bar-text">Resume</div>
             <div class="title-bar-controls">
-                <button aria-label="Minimize"></button>
-                <button aria-label="Maximize"></button>
-                <button aria-label="Close"></button>
+                <button class="btn-minimize" aria-label="Minimize"></button>
+                <button class="btn-maximize" aria-label="Maximize"></button>
+                <button class="btn-close" aria-label="Close"></button>
             </div>
         </div>
         <div class="window-body">
-            <p>Hello! I'm <strong>Andy Dai</strong>.</p>
-            <p>Welcome to my personal website.</p>
-            <div class="buttons">
-                <a href="resume.html"><button>View Resume</button></a>
-                <a href="projects.html"><button>Projects</button></a>
-                <a href="contact.html"><button>Contact Me</button></a>
-            </div>
+            <!-- Resume content goes here -->
+            <p>Your resume content.</p>
         </div>
     </div>
 
+    <div id="window-projects" class="window" style="display: none;">
+        <div class="title-bar">
+            <div class="title-bar-text">Projects</div>
+            <div class="title-bar-controls">
+                <button class="btn-minimize" aria-label="Minimize"></button>
+                <button class="btn-maximize" aria-label="Maximize"></button>
+                <button class="btn-close" aria-label="Close"></button>
+            </div>
+        </div>
+        <div class="window-body">
+            <!-- Projects content goes here -->
+            <p>Your projects content.</p>
+        </div>
+    </div>
+
+    <div id="window-contact" class="window" style="display: none;">
+        <div class="title-bar">
+            <div class="title-bar-text">Contact Me</div>
+            <div class="title-bar-controls">
+                <button class="btn-minimize" aria-label="Minimize"></button>
+                <button class="btn-maximize" aria-label="Maximize"></button>
+                <button class="btn-close" aria-label="Close"></button>
+            </div>
+        </div>
+        <div class="window-body">
+            <!-- Contact content goes here -->
+            <p>Your contact information.</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
