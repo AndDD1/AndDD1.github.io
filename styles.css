@@ -1,1 +1,68 @@
-styles
+body {
+    background-color: teal;
+    font-family: 'MS Sans Serif', Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+}
+
+.window {
+    width: 400px;
+    margin: auto;
+    border: 2px solid black;
+    box-shadow: 5px 5px gray;
+    background-color: silver;
+}
+
+.title-bar {
+    background: linear-gradient(to right, navy, blue);
+    color: white;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 2px;
+}
+
+.title-bar-text {
+    font-weight: bold;
+    padding-left: 5px;
+}
+
+.title-bar-controls button {
+    width: 16px;
+    height: 14px;
+    background-color: silver;
+    border: 1px solid black;
+    margin-left: 2px;
+    cursor: pointer;
+}
+
+.title-bar-controls button:active {
+    border: 1px inset black;
+}
+
+.window-body {
+    padding: 10px;
+}
+
+.window-body p {
+    margin: 10px 0;
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+button {
+    font-size: 14px;
+    padding: 5px 10px;
+    background-color: silver;
+    border: 2px outset buttonface;
+    cursor: pointer;
+}
+
+button:active {
+    border: 2px inset buttonface;
+}
