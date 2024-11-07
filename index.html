@@ -2,8 +2,9 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Your Name - Windows 98 Desktop</title>
+    <title>Andy Dai 95</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="icons/icon.png">
 </head>
 <body>
 
@@ -31,9 +32,12 @@
         <div class="title-bar">
             <div class="title-bar-text">Resume</div>
             <div class="title-bar-controls">
-                <button class="btn-minimize" aria-label="Minimize"></button>
-                <button class="btn-maximize" aria-label="Maximize"></button>
-                <button class="btn-close" aria-label="Close"></button>
+                <button class="btn-minimize" aria-label="Minimize">
+                    <img src="icons/minimize.png" alt="Minimize Icon">
+                </button>
+                <button class="btn-close" aria-label="Close">
+                    <img src="icons/close.png" alt="Close Icon">
+                </button>
             </div>
         </div>
         <div class="window-body">
@@ -46,9 +50,12 @@
         <div class="title-bar">
             <div class="title-bar-text">Projects</div>
             <div class="title-bar-controls">
-                <button class="btn-minimize" aria-label="Minimize"></button>
-                <button class="btn-maximize" aria-label="Maximize"></button>
-                <button class="btn-close" aria-label="Close"></button>
+                <button class="btn-minimize" aria-label="Minimize">
+                    <img src="icons/minimize.png" alt="Minimize Icon">
+                </button>
+                <button class="btn-close" aria-label="Close">
+                    <img src="icons/close.png" alt="Close Icon">
+                </button>
             </div>
         </div>
         <div class="window-body">
@@ -61,9 +68,12 @@
         <div class="title-bar">
             <div class="title-bar-text">Contact Me</div>
             <div class="title-bar-controls">
-                <button class="btn-minimize" aria-label="Minimize"></button>
-                <button class="btn-maximize" aria-label="Maximize"></button>
-                <button class="btn-close" aria-label="Close"></button>
+                <button class="btn-minimize" aria-label="Minimize">
+                    <img src="icons/minimize.png" alt="Minimize Icon">
+                </button>
+                <button class="btn-close" aria-label="Close">
+                    <img src="icons/close.png" alt="Close Icon">
+                </button>
             </div>
         </div>
         <div class="window-body">
@@ -72,6 +82,18 @@
         </div>
     </div>
 
+    <div class="taskbar">
+        <!-- Start button on the left -->
+        <div class="start-button">
+            <img src="icons/start.png" alt="Start Icon">
+            <span>Start</span>
+        </div>
+        <!-- Clock on the right -->
+        <div class="taskbar-clock" id="taskbar-clock">
+            <!-- Time will be inserted here by JavaScript -->
+        </div>
+    </div>
+    
     <script src="script.js"></script>
 </body>
 </html>

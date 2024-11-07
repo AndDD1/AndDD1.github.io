@@ -4,7 +4,7 @@ body, html {
     padding: 0;
     width: 100%;
     height: 100%;
-    font-family: 'MS Sans Serif', Arial, sans-serif;
+    font-family: "MS Sans Serif";
     background-color: #008080;
     overflow: hidden;
 }
@@ -13,7 +13,7 @@ body, html {
     position: relative;
     width: 100%;
     height: 100%;
-    background-image: url('backgrounds/win98_wallpaper.png'); /* Optional background image */
+    background-image: url('backgrounds/wallpaper.png'); /* might add a background image  later */
     background-size: cover;
 }
 
@@ -45,13 +45,19 @@ body, html {
 .window {
     position: absolute;
     width: 400px;
-    border: 2px solid #000;
+    border-top: 2px solid #ffffff;      /* Light color (top) */
+    border-left: 2px solid #ffffff;     /* Light color (left) */
+    border-bottom: 2px solid #404040;   /* Dark color (bottom) */
+    border-right: 2px solid #404040;    /* Dark color (right) */
     background-color: #C0C0C0;
-    box-shadow: 5px 5px 0px #404040;
+    /* Remove box-shadow if previously applied */
+    box-shadow: none;
+    z-index: 5; /* Ensure windows appear above other elements */
 }
 
+
 .title-bar {
-    background: linear-gradient(to right, #000080, #0000FF);
+    background-color: #000080;
     color: #FFFFFF;
     height: 20px;
     display: flex;
@@ -59,6 +65,11 @@ body, html {
     justify-content: space-between;
     cursor: move;
     user-select: none;
+    /* 3D border effect */
+    border-top: 1px solid #ffffff;
+    border-left: 1px solid #ffffff;
+    border-bottom: 1px solid #000000;
+    border-right: 1px solid #000000;
 }
 
 .title-bar-text {
@@ -85,14 +96,119 @@ body, html {
     background-color: #FFFFFF;
 }
 
+.title-bar-controls button {
+    width: 16px;
+    height: 14px;
+    background-color: #C0C0C0;
+    /* 3D border effect */
+    border-top: 1px solid #ffffff;
+    border-left: 1px solid #ffffff;
+    border-bottom: 1px solid #404040;
+    border-right: 1px solid #404040;
+    margin-left: 2px;
+    padding: 0;
+    cursor: pointer;
+}
+
+.title-bar-controls button:active {
+    /* Invert borders on click */
+    border-top: 1px solid #404040;
+    border-left: 1px solid #404040;
+    border-bottom: 1px solid #ffffff;
+    border-right: 1px solid #ffffff;
+}
+
+
 .window-body {
     padding: 10px;
-    background-color: #FFFFFF;
-    height: calc(100% - 20px);
-    overflow: auto;
+    background-color: #C0C0C0;
+    /* 3D inset effect */
+    border-top: 1px solid #ffffff;
+    border-left: 1px solid #ffffff;
+    border-bottom: 1px solid #808080;
+    border-right: 1px solid #808080;
 }
 
 /* Bring focused window to front */
 .window.active {
     z-index: 10;
+}
+/* Taskbar Styles */
+.taskbar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 28px;
+    background-color: #C0C0C0;
+    display: flex;
+    align-items: center;
+    padding: 0 2px;
+    box-sizing: content-box;
+    z-index: 1000;
+    position: fixed;
+    overflow: visible; 
+}
+/* Add a pseudo-element for the custom top border */
+.taskbar::before {
+    content: '';
+    position: absolute;
+    top: -2px; /* Position it above the taskbar */
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(to bottom, #FFF 1px, #ffffff 1px);
+}
+
+/* Start Button */
+/* Start Button */
+.start-button {
+    display: flex;
+    align-items: center;
+    background-color: #C0C0C0;
+    border-top: 2px solid #FFFFFF;
+    border-left: 2px solid #FFFFFF;
+    border-bottom: 2px solid #202020;
+    border-right: 2px solid #202020;
+    padding: 2px 5px;
+    cursor: default;
+}
+
+/* Active State */
+.start-button:active {
+    border-top: 2px solid #404040;
+    border-left: 2px solid #404040;
+    border-bottom: 2px solid #FFFFFF;
+    border-right: 2px solid #FFFFFF;
+}
+
+.start-button img {
+    width: 16px;
+    height: 14px;
+    margin-right: 4px;
+}
+
+.start-button span {
+    font-size: 13px;
+    color: #000000;
+    font-weight: 700;
+    
+}
+
+/* Taskbar Clock */
+.taskbar-clock {
+    display: flex;
+    align-items: center;
+    background-color: #C0C0C0;
+    border-top: 1px solid #404040;
+    border-left: 1px solid #404040;
+    border-bottom: 1px solid #FFFFFF;
+    border-right: 1px solid #FFFFFF;
+    padding: 2px 5px;
+    cursor: default;
+    font-family: "MS Sans Serif", "Segoe UI", sans-serif;
+    font-size: 13px;
+    color: #000000;
+    margin-right: 10px;
+    margin-left: auto; 
 }

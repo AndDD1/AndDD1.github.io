@@ -2,7 +2,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Variables to keep track of the highest z-index
     let highestZ = 1;
+    let windowOffsetX = 100; // Initial horizontal offset
+    let windowOffsetY = 100; // Initial vertical offset
+    const windowOffsetIncrement = 20; // Amount to offset each new window
+    
+    const startButton = document.querySelector('.start-button');
 
+    startButton.addEventListener('click', () => {
+        startButton.classList.toggle('active');
+    });
+    
     // Function to make an element draggable
     function makeDraggable(el) {
         const titleBar = el.querySelector('.title-bar');
@@ -44,8 +53,23 @@ document.addEventListener('DOMContentLoaded', () => {
         const windowElement = document.querySelector(windowSelector);
         if (windowElement) {
             windowElement.style.display = 'block';
-            windowElement.style.left = '100px';
-            windowElement.style.top = '100px';
+    
+            // Set the position using the offset variables
+            windowElement.style.left = windowOffsetX + 'px';
+            windowElement.style.top = windowOffsetY + 'px';
+    
+            // Increment the offsets for the next window
+            windowOffsetX += windowOffsetIncrement;
+            windowOffsetY += windowOffsetIncrement;
+    
+            // Optional: Reset offsets if they exceed window dimensions
+            if (windowOffsetX > window.innerWidth - 300) { // Adjust '400' to your window width
+                windowOffsetX = 50; // Reset to initial offset
+            }
+            if (windowOffsetY > window.innerHeight - 200) { // Adjust '300' to your window height
+                windowOffsetY = 50; // Reset to initial offset
+            }
+    
             highestZ++;
             windowElement.style.zIndex = highestZ;
             windowElement.classList.add('active');
@@ -75,19 +99,25 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Optional: Minimize and Maximize functionality (placeholders)
-    document.querySelectorAll('.btn-minimize').forEach(button => {
-        button.addEventListener('click', () => {
-            // Implement minimize functionality here
-            alert('Minimize functionality not implemented.');
-        });
-    });
+    // Function to update the taskbar clock
+    function updateClock() {
+        const clockElement = document.getElementById('taskbar-clock');
+        const now = new Date();
+        let hours = now.getHours();
+        let minutes = now.getMinutes();
+        const ampm = hours >= 12 ? 'PM' : 'AM';
+        hours = hours % 12;
+        hours = hours ? hours : 12;
 
-    document.querySelectorAll('.btn-maximize').forEach(button => {
-        button.addEventListener('click', () => {
-            // Implement maximize functionality here
-            alert('Maximize functionality not implemented.');
-        });
-    });
+        hours = hours.toString().padStart(2, '0');
+        minutes = minutes.toString().padStart(2, '0');
+
+        const timeString = `${hours}:${minutes}:${ampm}`;
+        clockElement.textContent = timeString;
+    }
+
+    // Update the clock immediately and then every minute
+    updateClock();
+    setInterval(updateClock, 60000); // Update every minute
 
 });
