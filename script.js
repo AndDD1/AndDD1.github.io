@@ -1,5 +1,4 @@
-document.addEventListener('DOMContentLoaded', () => {
-
+document.addEventListener('DOMContentLoaded', () => { // @author Andy Dai <dai.ad0478@gmail.com>
     // Variables to keep track of the highest z-index
     let highestZ = 1;
     let windowOffsetX = 200; // Initial horizontal offset
