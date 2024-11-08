@@ -133,7 +133,7 @@ document.addEventListener('DOMContentLoaded', () => {
         hours = hours.toString().padStart(2, '0');
         minutes = minutes.toString().padStart(2, '0');
 
-        const timeString = `${hours}:${minutes}:${ampm}`;
+        const timeString = `${hours}:${minutes} ${ampm}`;
         clockElement.textContent = timeString;
     }
 

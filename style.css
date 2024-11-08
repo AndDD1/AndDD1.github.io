@@ -18,7 +18,7 @@ body, html {
     grid-auto-flow: column; /* Fill items vertically */
     grid-template-rows: repeat(auto-fill, 70px); /* Adjust based on icon height plus spacing */
     grid-template-columns: 70px; /* Set column width to accommodate icons */
-    padding: 10px;
+    padding: 5px;
     overflow: hidden;
 }
 
@@ -32,6 +32,7 @@ body, html {
 .icon img {
     width: 32px;
     height: 32px;
+    padding-top: 10px;
 }
 
 .icon span {
@@ -300,7 +301,7 @@ body, html {
     border-left: 1px solid #404040;
     border-bottom: 1px solid #FFFFFF;
     border-right: 1px solid #FFFFFF;
-    padding: 2px 5px;
+    padding: 3px 6px;
     cursor: default;
     font-family: "MS Sans Serif", "Segoe UI", sans-serif;
     font-size: 13px;
