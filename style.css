@@ -1,13 +1,22 @@
 /* @author Andy Dai <dai.ad0478@gmail.com */
 /* Desktop Styles */
+@font-face {
+    font-family: "Custom"; 
+    src: url('fonts/MSSansSerif.ttf') format('truetype')
+  }
+@font-face {
+    font-family: "Custom Bold"; 
+    src: url('fonts/MSSansSerifbold.ttf') format('truetype')
+  }
 body, html {
     margin: 0;
     padding: 0;
     width: 100%;
     height: 100%;
-    font-family: "MS Sans Serif";
+    font-family: "Custom", sans-serif;
     background-color: #008080;
     overflow: hidden;
+    letter-spacing: 0.03em;
 }
 
 .desktop {
@@ -167,7 +176,8 @@ body, html {
 /* File explorer */
 .menu-bar {
     background-color: #C0C0C0;
-    padding: 2px 5px;
+    padding: 0px 5px;
+    padding-top: 2px;
     border-bottom: 2px solid #808080;
     border-top: 1px solid #FFFFFF;
     border-left: 1px solid #FFFFFF;
@@ -214,7 +224,7 @@ body, html {
     flex-grow: 1;
     height: 20px;
     border: none;
-    padding: 2px;
+    padding-top: 2px;
     font-size: 12px;
     background-color: #FFFFFF;
 }
@@ -226,7 +236,7 @@ body, html {
     flex-wrap: wrap;
     align-content: flex-start;
     gap: 10px;
-    background-color: #FFFFFF; /* Optional: Set background color */
+    background-color: #FFFFFF; 
 }
 
 .explorer-icon {
@@ -268,7 +278,7 @@ body, html {
     border-left: 2px solid #FFFFFF;
     border-bottom: 2px solid #202020;
     border-right: 2px solid #202020;
-    padding: 2px 5px;
+    padding: 1px 5px !important; 
     cursor: default;
 }
 
@@ -289,22 +299,25 @@ body, html {
 .start-button span {
     font-size: 13px;
     color: #000000;
-    font-weight: 700;
-    
+    font-family: "Custom";
+    padding-top: 4px;
+    font-weight: 900;
+    letter-spacing: 0.05em;
 }
 
 /* Taskbar Clock */
 .taskbar-clock {
     display: flex;
-    align-items: center;
+    align-items:normal;
     background-color: #C0C0C0;
     border-top: 1px solid #404040;
     border-left: 1px solid #404040;
     border-bottom: 1px solid #FFFFFF;
     border-right: 1px solid #FFFFFF;
-    padding: 3px 6px;
+    padding: 2px 6px;
+    padding-top: 6px;
     cursor: default;
-    font-family: "MS Sans Serif", "Segoe UI", sans-serif;
+    font-family: "Custom";
     font-size: 13px;
     color: #000000;
     margin-right: 10px;
