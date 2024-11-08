@@ -2,9 +2,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Variables to keep track of the highest z-index
     let highestZ = 1;
-    let windowOffsetX = 100; // Initial horizontal offset
+    let windowOffsetX = 200; // Initial horizontal offset
     let windowOffsetY = 100; // Initial vertical offset
-    const windowOffsetIncrement = 20; // Amount to offset each new window
+    const windowOffsetIncrement = 15; // Amount to offset each new window
     
     const startButton = document.querySelector('.start-button');
 
@@ -63,11 +63,11 @@ document.addEventListener('DOMContentLoaded', () => {
             windowOffsetY += windowOffsetIncrement;
     
             // Optional: Reset offsets if they exceed window dimensions
-            if (windowOffsetX > window.innerWidth - 300) { // Adjust '400' to your window width
-                windowOffsetX = 50; // Reset to initial offset
+            if (windowOffsetX > window.innerWidth - 400) { // Adjust '400' to your window width
+                windowOffsetX = 200; // Reset to initial offset
             }
-            if (windowOffsetY > window.innerHeight - 200) { // Adjust '300' to your window height
-                windowOffsetY = 50; // Reset to initial offset
+            if (windowOffsetY > window.innerHeight - 300) { // Adjust '300' to your window height
+                windowOffsetY = 100; // Reset to initial offset
             }
     
             highestZ++;
@@ -98,6 +98,27 @@ document.addEventListener('DOMContentLoaded', () => {
             closeWindow(button);
         });
     });
+
+    // Event listeners for explorer icons
+    document.querySelectorAll('.explorer-icon').forEach(icon => {
+        icon.addEventListener('dblclick', () => {
+            const action = icon.getAttribute('data-action');
+
+            if (action === 'link') {
+                // Open external link
+                const url = icon.getAttribute('data-url');
+                window.open(url, '_blank'); // Opens the link in a new tab/window
+            } else if (action === 'window') {
+                // Open internal window
+                const windowSelector = icon.getAttribute('data-window');
+                openWindow(windowSelector);
+            } else {
+                // Handle other actions or do nothing
+                console.warn('No action specified for this icon.');
+            }
+        });
+    });
+
 
     // Function to update the taskbar clock
     function updateClock() {

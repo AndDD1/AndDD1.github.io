@@ -24,6 +24,10 @@
             <img src="icons/contact.png" alt="Contact Icon">
             <span>Contact Me</span>
         </div>
+        <div class="icon" data-window="#window-random">
+            <img src="icons/folder.png" alt="Folder Icon">
+            <span>Misc</span>
+        </div>
 
     </div>
 
@@ -42,7 +46,7 @@
         </div>
         <div class="window-body">
             <!-- Resume content goes here -->
-            <p>Your resume content.</p>
+            <p>PLACEHOLDER.</p>
         </div>
     </div>
 
@@ -60,7 +64,7 @@
         </div>
         <div class="window-body">
             <!-- Projects content goes here -->
-            <p>Your projects content.</p>
+            <p>PLACEHOLDER.</p>
         </div>
     </div>
 
@@ -78,19 +82,62 @@
         </div>
         <div class="window-body">
             <!-- Contact content goes here -->
-            <p>Your contact information.</p>
+            <p>PLACEHOLDER.</p>
+        </div>
+    </div>
+
+    <div id="window-random" class="window" style="display: none;">
+        <div class="title-bar">
+            <div class="title-bar-text">Miscellaneous</div>
+            <div class="title-bar-controls">
+                <button class="btn-minimize" aria-label="Minimize">
+                    <img src="icons/minimize.png" alt="Minimize Icon">
+                </button>
+                <button class="btn-close" aria-label="Close">
+                    <img src="icons/close.png" alt="Close Icon">
+                </button>
+            </div>
+        </div>
+        <!-- Menu Bar -->
+        <div class="menu-bar">
+            <ul class="menu">
+                <li>File</li>
+                <li>Edit</li>
+                <li>View</li>
+                <li>Go</li>
+                <li>Favorites</li>
+                <li>Help</li>
+            </ul>
+        </div>
+        <!-- Address Bar -->
+        <div class="address-bar">
+            <span>Address</span>
+            <input type="text" value="My Computer" readonly>
+        </div>
+        <!-- Explorer Content -->
+        <div class="window-body explorer-body">
+            <!-- Icons inside File Explorer -->
+            <div class="explorer-icon" data-action="link" data-url="https://archive.org/details/windows-98-icons" title="https://archive.org/details/windows-98-icons">
+                <img src="icons/world.png" alt="World Icon">
+                <span>Icons</span>
+            </div>
+            <div class="explorer-icon" data-window="#window-file2">
+                <img src="icons/folder.png" alt="Folder Icon">
+                <span>Pictures</span>
+            </div>
+            <div class="explorer-icon" data-window="#window-file3">
+                <img src="icons/folder.png" alt="Folder Icon">
+                <span>Music</span>
+            </div>
         </div>
     </div>
 
     <div class="taskbar">
-        <!-- Start button on the left -->
         <div class="start-button">
             <img src="icons/start.png" alt="Start Icon">
             <span>Start</span>
         </div>
-        <!-- Clock on the right -->
         <div class="taskbar-clock" id="taskbar-clock">
-            <!-- Time will be inserted here by JavaScript -->
         </div>
     </div>
     
