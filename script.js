@@ -139,5 +139,4 @@ document.addEventListener('DOMContentLoaded', () => { // @author Andy Dai <dai.a
     // Update the clock immediately and then every minute
     updateClock();
     setInterval(updateClock, 60000); // Update every minute
-
 });
