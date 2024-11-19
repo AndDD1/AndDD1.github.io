@@ -6,143 +6,140 @@
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="icons/icon.png">
 </head>
-<body>
-
-    <!-- Desktop -->
-    <div class="desktop">
-
-        <!-- Desktop Icons -->
-        <div class="icon" data-window="#window-resume">
-            <img src="icons/resume.png" alt="Resume Icon">
-            <span>Resume</span>
-        </div>
-        <div class="icon" data-window="#window-projects">
-            <img src="icons/projects.png" alt="Projects Icon">
-            <span>Projects</span>
-        </div>
-        <div class="icon" data-window="#window-contact">
-            <img src="icons/contact.png" alt="Contact Icon">
-            <span>Contact Me</span>
-        </div>
-        <div class="icon" data-window="#window-random">
-            <img src="icons/folder.png" alt="Folder Icon">
-            <span>Links</span>
-        </div>
-
-    </div>
-
-    <!-- Application Windows -->
-    <div id="window-resume" class="window" style="display: none;">
-        <div class="title-bar">
-            <div class="title-bar-text">Resume</div>
-            <div class="title-bar-controls">
-                <button class="btn-minimize" aria-label="Minimize">
-                    <img src="icons/minimize.png" alt="Minimize Icon">
-                </button>
-                <button class="btn-close" aria-label="Close">
-                    <img src="icons/close.png" alt="Close Icon">
-                </button>
+    <body>
+        <!-- Desktop -->
+        <div class="desktop">
+            <!-- Desktop Icons -->
+            <div class="icon" data-window="#window-resume">
+                <img src="icons/resume.png" alt="Resume Icon">
+                <span>Resume</span>
+            </div>
+            <div class="icon" data-window="#window-projects">
+                <img src="icons/projects.png" alt="Projects Icon">
+                <span>Projects</span>
+            </div>
+            <div class="icon" data-window="#window-contact">
+                <img src="icons/contact.png" alt="Contact Icon">
+                <span>Contact Me</span>
+            </div>
+            <div class="icon" data-window="#window-random">
+                <img src="icons/folder.png" alt="Folder Icon">
+                <span>Links</span>
             </div>
         </div>
-        <div class="window-body">
-            <!-- Resume content goes here -->
-            <p>PLACEHOLDER</p>
-        </div>
-    </div>
 
-    <div id="window-projects" class="window" style="display: none;">
-        <div class="title-bar">
-            <div class="title-bar-text">Projects</div>
-            <div class="title-bar-controls">
-                <button class="btn-minimize" aria-label="Minimize">
-                    <img src="icons/minimize.png" alt="Minimize Icon">
-                </button>
-                <button class="btn-close" aria-label="Close">
-                    <img src="icons/close.png" alt="Close Icon">
-                </button>
+        <!-- Application Windows -->
+        <div id="window-resume" class="window" style="display: none;">
+            <div class="title-bar">
+                <div class="title-bar-text">Resume</div>
+                <div class="title-bar-controls">
+                    <button class="btn-minimize" aria-label="Minimize">
+                        <img src="icons/minimize.png" alt="Minimize Icon">
+                    </button>
+                    <button class="btn-close" aria-label="Close">
+                        <img src="icons/close.png" alt="Close Icon">
+                    </button>
+                </div>
+            </div>
+            <div class="window-body">
+                <!-- Resume content goes here -->
+                <p>PLACEHOLDER</p>
             </div>
         </div>
-        <div class="window-body">
-            <!-- Projects content goes here -->
-            <p>PLACEHOLDER.</p>
-        </div>
-    </div>
 
-    <div id="window-contact" class="window" style="display: none;">
-        <div class="title-bar">
-            <div class="title-bar-text">Contact Me</div>
-            <div class="title-bar-controls">
-                <button class="btn-minimize" aria-label="Minimize">
-                    <img src="icons/minimize.png" alt="Minimize Icon">
-                </button>
-                <button class="btn-close" aria-label="Close">
-                    <img src="icons/close.png" alt="Close Icon">
-                </button>
+        <div id="window-projects" class="window" style="display: none;">
+            <div class="title-bar">
+                <div class="title-bar-text">Projects</div>
+                <div class="title-bar-controls">
+                    <button class="btn-minimize" aria-label="Minimize">
+                        <img src="icons/minimize.png" alt="Minimize Icon">
+                    </button>
+                    <button class="btn-close" aria-label="Close">
+                        <img src="icons/close.png" alt="Close Icon">
+                    </button>
+                </div>
+            </div>
+            <div class="window-body">
+                <!-- Projects content goes here -->
+                <p>PLACEHOLDER.</p>
             </div>
         </div>
-        <div class="window-body">
-            <!-- Contact content goes here -->
-            <p>Andy Dai</p>
-            <p>dai.ad0478@gmail.com</p>
-            <p>(416) 618 1989</p>
-        </div>
-    </div>
 
-    <div id="window-random" class="window" style="display: none;">
-        <div class="title-bar">
-            <div class="title-bar-text">Links</div>
-            <div class="title-bar-controls">
-                <button class="btn-minimize" aria-label="Minimize">
-                    <img src="icons/minimize.png" alt="Minimize Icon">
-                </button>
-                <button class="btn-close" aria-label="Close">
-                    <img src="icons/close.png" alt="Close Icon">
-                </button>
+        <div id="window-contact" class="window" style="display: none;">
+            <div class="title-bar">
+                <div class="title-bar-text">Contact Me</div>
+                <div class="title-bar-controls">
+                    <button class="btn-minimize" aria-label="Minimize">
+                        <img src="icons/minimize.png" alt="Minimize Icon">
+                    </button>
+                    <button class="btn-close" aria-label="Close">
+                        <img src="icons/close.png" alt="Close Icon">
+                    </button>
+                </div>
+            </div>
+            <div class="window-body">
+                <!-- Contact content goes here -->
+                <p>Andy Dai</p>
+                <p>dai.ad0478@gmail.com</p>
+                <p>(416) 618 1989</p>
             </div>
         </div>
-        <!-- Menu Bar -->
-        <div class="menu-bar">
-            <ul class="menu">
-                <li>File</li>
-                <li>Edit</li>
-                <li>View</li>
-                <li>Go</li>
-                <li>Favorites</li>
-                <li>Help</li>
-            </ul>
-        </div>
-        <!-- Address Bar -->
-        <div class="address-bar">
-            <span>Address</span>
-            <input type="text" value=" C:\" readonly style="font-family: Custom;">
-        </div>
-        <!-- Explorer Content -->
-        <div class="window-body explorer-body">
-            <!-- Icons inside File Explorer -->
-            <div class="explorer-icon" data-action="link" data-url="https://github.com/AndDD1" title="https://github.com/AndDD1">
-                <img src="icons/github.png" alt="Folder Icon">
-                <span>Github</span>
-            </div>
-            <div class="explorer-icon" data-action="link" data-url="https://archive.org/details/windows-98-icons" title="https://archive.org/details/windows-98-icons">
-                <img src="icons/world.png" alt="World Icon">
-                <span>Win95 Icons</span>
-            </div>
-            <div class="explorer-icon" data-action="link" data-url="https://www.youtube.com/watch?v=-48t4C0W90w" title="https://www.youtube.com/watch?v=-48t4C0W90w">
-                <img src="icons/music.png" alt="Music Icon">
-                <span>Break the Fall - Swsh</span>
-            </div>
-        </div>
-    </div>
 
-    <div class="taskbar">
-        <div class="start-button">
-            <img src="icons/start.png" alt="Start Icon">
-            <span>Start</span>
+        <div id="window-random" class="window" style="display: none;">
+            <div class="title-bar">
+                <div class="title-bar-text">Links</div>
+                <div class="title-bar-controls">
+                    <button class="btn-minimize" aria-label="Minimize">
+                        <img src="icons/minimize.png" alt="Minimize Icon">
+                    </button>
+                    <button class="btn-close" aria-label="Close">
+                        <img src="icons/close.png" alt="Close Icon">
+                    </button>
+                </div>
+            </div>
+            <!-- Menu Bar -->
+            <div class="menu-bar">
+                <ul class="menu">
+                    <li>File</li>
+                    <li>Edit</li>
+                    <li>View</li>
+                    <li>Go</li>
+                    <li>Favorites</li>
+                    <li>Help</li>
+                </ul>
+            </div>
+            <!-- Address Bar -->
+            <div class="address-bar">
+                <span>Address</span>
+                <input type="text" value=" C:\" readonly style="font-family: Custom;">
+            </div>
+            <!-- Explorer Content -->
+            <div class="window-body explorer-body">
+                <!-- Icons inside File Explorer -->
+                <div class="explorer-icon" data-action="link" data-url="https://github.com/AndDD1" title="https://github.com/AndDD1">
+                    <img src="icons/github.png" alt="Folder Icon">
+                    <span>Github</span>
+                </div>
+                <div class="explorer-icon" data-action="link" data-url="https://archive.org/details/windows-98-icons" title="https://archive.org/details/windows-98-icons">
+                    <img src="icons/world.png" alt="World Icon">
+                    <span>Win95 Icons</span>
+                </div>
+                <div class="explorer-icon" data-action="link" data-url="https://www.youtube.com/watch?v=-48t4C0W90w" title="https://www.youtube.com/watch?v=-48t4C0W90w">
+                    <img src="icons/music.png" alt="Music Icon">
+                    <span>Break the Fall - Swsh</span>
+                </div>
+            </div>
         </div>
-        <div class="taskbar-clock" id="taskbar-clock">
+
+        <div class="taskbar">
+            <div class="start-button">
+                <img src="icons/start.png" alt="Start Icon">
+                <span>Start</span>
+            </div>
+            <div class="taskbar-clock" id="taskbar-clock">
+            </div>
         </div>
-    </div>
-    
-    <script src="script.js"></script>
-</body>
+        
+        <script src="script.js"></script>
+    </body>
 </html>
