@@ -24,7 +24,7 @@ body, html {
 
 /* 4:3 wrapper container */
 #wrapper {
-    width: 100vmin;
+    width: 110vmin;
     aspect-ratio: 4 / 3;
     background-color: #008080;
     position: relative;
