@@ -189,7 +189,7 @@
     <audio id="bootup-sound" src="boot.mp3"></audio>
 
     <script>
-    // Boot Sequence Script with Skip-On-Input Feature
+    // Boot Sequence Script with Skip 
     const bootOverlay = document.getElementById('boot-overlay');
     const bootupSound = document.getElementById('bootup-sound');
     const bootMessages = [
@@ -253,7 +253,7 @@
         // After all messages, show the prompt
         const prompt = document.createElement('div');
         prompt.className = 'prompt';
-        prompt.textContent = "Press any key to continue...";
+        prompt.textContent = "Press any key to boot system...";
         bootOverlay.appendChild(prompt);
     }
 }
