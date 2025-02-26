@@ -8,29 +8,58 @@
     font-family: "Custom Bold"; 
     src: url('fonts/MSSansSerifbold.ttf') format('truetype')
   }
+/* Center the wrapper on the page */
 body, html {
     margin: 0;
     padding: 0;
     width: 100%;
     height: 100%;
+    background-color: #000; /* outer background to frame the screen */
+    display: flex;
+    justify-content: center;
+    align-items: center;
     font-family: "Custom", sans-serif;
-    background-color: #008080;
-    overflow: hidden;
-    letter-spacing: 0.03em;
 }
 
-.desktop {
+/* 4:3 wrapper container */
+#wrapper {
+    width: 100vmin;
+    aspect-ratio: 4 / 3;
+    background-color: #008080;
     position: relative;
+    overflow: hidden;
+    border-radius: 5px; /* Slightly rounded edges */
+  }
+
+/* Ensure inner elements fill the wrapper */
+.desktop {
     width: 100%;
-    height: calc(100% - 30px); /* Subtract taskbar height if necessary */
+    height: calc(100% - 30px); /* Adjust based on your taskbar height */
     background-color: #008080;
     display: grid;
-    grid-auto-flow: column; /* Fill items vertically */
-    grid-template-rows: repeat(auto-fill, 70px); /* Adjust based on icon height plus spacing */
-    grid-template-columns: 70px; /* Set column width to accommodate icons */
+    grid-auto-flow: column;
+    grid-template-rows: repeat(auto-fill, 70px);
+    grid-template-columns: 70px;
     padding: 5px;
     overflow: hidden;
 }
+
+/* Update taskbar to be relative to the wrapper */
+.taskbar {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 28px;
+    background-color: #C0C0C0;
+    display: flex;
+    align-items: center;
+    padding: 0 2px;
+    box-sizing: content-box;
+    z-index: 1000;
+    overflow: visible; 
+}
+
 
 .icon {
     width: 72px;
@@ -147,21 +176,7 @@ body, html {
     z-index: 10;
 }
 /* Taskbar Styles */
-.taskbar {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 28px;
-    background-color: #C0C0C0;
-    display: flex;
-    align-items: center;
-    padding: 0 2px;
-    box-sizing: content-box;
-    z-index: 1000;
-    position: fixed;
-    overflow: visible; 
-}
+
 /* Add a pseudo-element for the custom top border */
 .taskbar::before {
     content: '';

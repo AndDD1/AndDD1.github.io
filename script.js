@@ -1,44 +1,54 @@
-document.addEventListener('DOMContentLoaded', () => { // @author Andy Dai <dai.ad0478@gmail.com>
-    // Variables to keep track of the highest z-index
+// @author Andy Dai <dai.ad0478@gmail.com>
+document.addEventListener('DOMContentLoaded', () => {
     let highestZ = 1;
     let windowOffsetX = 200; // Initial horizontal offset
     let windowOffsetY = 100; // Initial vertical offset
     const windowOffsetIncrement = 15; // Amount to offset each new window
-    
+
     const startButton = document.querySelector('.start-button');
+    const wrapper = document.getElementById('wrapper');
 
     startButton.addEventListener('click', () => {
         startButton.classList.toggle('active');
     });
-    
-    // Function to make an element draggable
     function makeDraggable(el) {
         const titleBar = el.querySelector('.title-bar');
         let offsetX = 0, offsetY = 0, isDragging = false;
-
+    
         titleBar.addEventListener('mousedown', (e) => {
+            // Get the wrapper's bounding rectangle to convert viewport coordinates
+            const wrapperRect = wrapper.getBoundingClientRect();
             isDragging = true;
-            offsetX = e.clientX - el.offsetLeft;
-            offsetY = e.clientY - el.offsetTop;
-
-            // Bring window to front
+            // Compute the offset relative to the wrapper
+            offsetX = e.clientX - wrapperRect.left - el.offsetLeft;
+            offsetY = e.clientY - wrapperRect.top - el.offsetTop;
+    
             highestZ++;
             el.style.zIndex = highestZ;
             el.classList.add('active');
         });
-
+    
         document.addEventListener('mousemove', (e) => {
             if (isDragging) {
-                el.style.left = (e.clientX - offsetX) + 'px';
-                el.style.top = (e.clientY - offsetY) + 'px';
+                const wrapperRect = wrapper.getBoundingClientRect();
+                let newLeft = e.clientX - wrapperRect.left - offsetX;
+                let newTop = e.clientY - wrapperRect.top - offsetY;
+                const elWidth = el.offsetWidth;
+                const elHeight = el.offsetHeight;
+                // Clamp the new position within the wrapper
+                if (newLeft < 0) newLeft = 0;
+                if (newLeft + elWidth > wrapper.offsetWidth) newLeft = wrapper.offsetWidth - elWidth;
+                if (newTop < 0) newTop = 0;
+                if (newTop + elHeight > wrapper.offsetHeight) newTop = wrapper.offsetHeight - elHeight;
+                el.style.left = newLeft + 'px';
+                el.style.top = newTop + 'px';
             }
         });
-
+    
         document.addEventListener('mouseup', () => {
             isDragging = false;
         });
-
-        // Remove 'active' class when window is not focused
+    
         el.addEventListener('mousedown', () => {
             document.querySelectorAll('.window').forEach(win => win.classList.remove('active'));
             el.classList.add('active');
@@ -46,35 +56,48 @@ document.addEventListener('DOMContentLoaded', () => { // @author Andy Dai <dai.a
             el.style.zIndex = highestZ;
         });
     }
-
-    // Open window function
+        // Open window function with wrapper dimension checks
     function openWindow(windowSelector) {
         const windowElement = document.querySelector(windowSelector);
         if (windowElement) {
             windowElement.style.display = 'block';
-    
-            // Set the position using the offset variables
             windowElement.style.left = windowOffsetX + 'px';
             windowElement.style.top = windowOffsetY + 'px';
-    
-            // Increment the offsets for the next window
+
+            // Increment offsets for next window
             windowOffsetX += windowOffsetIncrement;
             windowOffsetY += windowOffsetIncrement;
-    
-            // Optional: Reset offsets if they exceed window dimensions
-            if (windowOffsetX > window.innerWidth - 400) { // Adjust '400' to your window width
-                windowOffsetX = 200; // Reset to initial offset
+
+            // Use the wrapper's dimensions instead of the full window's
+            if (windowOffsetX > wrapper.offsetWidth - 400) { // 400 is the window width
+                windowOffsetX = 200;
             }
-            if (windowOffsetY > window.innerHeight - 300) { // Adjust '300' to your window height
-                windowOffsetY = 100; // Reset to initial offset
+            if (windowOffsetY > wrapper.offsetHeight - 300) { // 300 is the window height
+                windowOffsetY = 100;
             }
-    
+
             highestZ++;
             windowElement.style.zIndex = highestZ;
             windowElement.classList.add('active');
             makeDraggable(windowElement);
         }
     }
+
+    document.addEventListener('mousemove', (e) => {
+        if (isDragging) {
+          const wrapperRect = wrapper.getBoundingClientRect();
+          let newLeft = e.clientX - wrapperRect.left - offsetX;
+          let newTop = e.clientY - wrapperRect.top - offsetY;
+          const elWidth = el.offsetWidth;
+          const elHeight = el.offsetHeight;
+          if (newLeft < 0) newLeft = 0;
+          if (newLeft + elWidth > wrapper.offsetWidth) newLeft = wrapper.offsetWidth - elWidth;
+          if (newTop < 0) newTop = 0;
+          if (newTop + elHeight > wrapper.offsetHeight) newTop = wrapper.offsetHeight - elHeight;
+          el.style.left = newLeft + 'px';
+          el.style.top = newTop + 'px';
+        }
+      });
 
     // Close window function
     function closeWindow(button) {
