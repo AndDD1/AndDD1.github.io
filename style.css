@@ -1,20 +1,21 @@
-/* @author Andy Dai <dai.ad0478@gmail.com */
+/* @author Andy Dai */
 /* Desktop Styles */
 @font-face {
     font-family: "Custom"; 
     src: url('fonts/MSSansSerif.ttf') format('truetype')
-  }
+}
 @font-face {
     font-family: "Custom Bold"; 
     src: url('fonts/MSSansSerifbold.ttf') format('truetype')
-  }
+}
+
 /* Center the wrapper on the page */
 body, html {
     margin: 0;
     padding: 0;
     width: 100%;
     height: 100%;
-    background-color: #000; /* outer background to frame the screen */
+    background-color: #000;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -28,13 +29,13 @@ body, html {
     background-color: #008080;
     position: relative;
     overflow: hidden;
-    border-radius: 5px; /* Slightly rounded edges */
-  }
+    border-radius: 5px;
+}
 
 /* Ensure inner elements fill the wrapper */
 .desktop {
     width: 100%;
-    height: calc(100% - 30px); /* Adjust based on your taskbar height */
+    height: calc(100% - 30px);
     background-color: #008080;
     display: grid;
     grid-auto-flow: column;
@@ -60,7 +61,7 @@ body, html {
     overflow: visible; 
 }
 
-
+/* Desktop Icons */
 .icon {
     width: 72px;
     text-align: center;
@@ -73,12 +74,10 @@ body, html {
     height: 32px;
     padding-top: 10px;
 }
-
 .icon span {
     display: block;
     margin-top: 5px;
 }
-
 .icon:hover {
     background-color: rgba(255, 255, 255, 0.3);
 }
@@ -87,17 +86,14 @@ body, html {
 .window {
     position: absolute;
     width: 400px;
-    border-top: 2px solid #ffffff;      /* Light color (top) */
-    border-left: 2px solid #ffffff;     /* Light color (left) */
-    border-bottom: 2px solid #404040;   /* Dark color (bottom) */
-    border-right: 2px solid #404040;    /* Dark color (right) */
+    border-top: 2px solid #ffffff;
+    border-left: 2px solid #ffffff;
+    border-bottom: 2px solid #404040;
+    border-right: 2px solid #404040;
     background-color: #C0C0C0;
-    /* Remove box-shadow if previously applied */
     box-shadow: none;
-    z-index: 5; /* Ensure windows appear above other elements */
+    z-index: 5;
 }
-
-
 .title-bar {
     background-color: #000080;
     color: #FFFFFF;
@@ -107,23 +103,19 @@ body, html {
     justify-content: space-between;
     cursor: move;
     user-select: none;
-    /* 3D border effect */
     border-top: 1px solid #ffffff;
     border-left: 1px solid #ffffff;
     border-bottom: 1px solid #000000;
     border-right: 1px solid #000000;
 }
-
 .title-bar-text {
     padding-left: 5px;
     font-size: 12px;
 }
-
 .title-bar-controls {
     display: flex;
     margin-right: 2px;
 }
-
 .title-bar-controls button {
     width: 16px;
     height: 14px;
@@ -133,16 +125,13 @@ body, html {
     padding: 0;
     cursor: pointer;
 }
-
 .title-bar-controls button:hover {
     background-color: #FFFFFF;
 }
-
 .title-bar-controls button {
     width: 16px;
     height: 14px;
     background-color: #C0C0C0;
-    /* 3D border effect */
     border-top: 1px solid #ffffff;
     border-left: 1px solid #ffffff;
     border-bottom: 1px solid #404040;
@@ -151,41 +140,126 @@ body, html {
     padding: 0;
     cursor: pointer;
 }
-
 .title-bar-controls button:active {
-    /* Invert borders on click */
     border-top: 1px solid #404040;
     border-left: 1px solid #404040;
     border-bottom: 1px solid #ffffff;
     border-right: 1px solid #ffffff;
 }
-
-
 .window-body {
     padding: 10px;
     background-color: #C0C0C0;
-    /* 3D inset effect */
     border-top: 1px solid #ffffff;
     border-left: 1px solid #ffffff;
     border-bottom: 1px solid #808080;
     border-right: 1px solid #808080;
 }
-
 /* Bring focused window to front */
 .window.active {
     z-index: 10;
 }
-/* Taskbar Styles */
 
-/* Add a pseudo-element for the custom top border */
+/* Taskbar Styles */
 .taskbar::before {
     content: '';
     position: absolute;
-    top: -2px; /* Position it above the taskbar */
+    top: -2px;
     left: 0;
     width: 100%;
     height: 2px;
     background: linear-gradient(to bottom, #FFF 1px, #ffffff 1px);
+}
+
+/* Container for taskbar icons */
+.taskbar-icons {
+    display: flex;
+    align-items: center;
+}
+
+/* Taskbar Icon (styled like the Start Button) */
+.taskbar-icon {
+    display: flex;
+    align-items: center;
+    background-color: #C0C0C0;
+    border-top: 2px solid #FFFFFF;
+    border-left: 2px solid #FFFFFF;
+    border-bottom: 2px solid #202020;
+    border-right: 2px solid #202020;
+    padding: 1px 5px !important;
+    cursor: pointer;
+    margin: 0 2px; /* 2px spacing on the sides */
+}
+.taskbar-icon:active {
+    border-top: 2px solid #404040;
+    border-left: 2px solid #404040;
+    border-bottom: 2px solid #FFFFFF;
+    border-right: 2px solid #FFFFFF;
+}
+.taskbar-icon span {
+    font-size: 13px;
+    color: #000000;
+    font-family: "Custom";
+    padding-top: 4px;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+}
+/* New style for the taskbar icon image */
+.taskbar-icon-img {
+    width: 16px;
+    height: 16px;
+    margin-right: 4px;
+}
+
+/* Taskbar Clock */
+.taskbar-clock {
+    display: flex;
+    align-items: normal;
+    background-color: #C0C0C0;
+    border-top: 1px solid #404040;
+    border-left: 1px solid #404040;
+    border-bottom: 1px solid #FFFFFF;
+    border-right: 1px solid #FFFFFF;
+    padding: 2px 6px;
+    padding-top: 6px;
+    cursor: default;
+    font-family: "Custom";
+    font-size: 13px;
+    color: #000000;
+    margin-right: 10px;
+    margin-left: auto;
+}
+
+/* Start Button */
+.start-button {
+    display: flex;
+    align-items: center;
+    background-color: #C0C0C0;
+    border-top: 2px solid #FFFFFF;
+    border-left: 2px solid #FFFFFF;
+    border-bottom: 2px solid #202020;
+    border-right: 2px solid #202020;
+    padding: 1px 5px !important;
+    cursor: default;
+    margin-right: 2px;  /* Added 2px spacing to the right */
+}
+.start-button:active {
+    border-top: 2px solid #404040;
+    border-left: 2px solid #404040;
+    border-bottom: 2px solid #FFFFFF;
+    border-right: 2px solid #FFFFFF;
+}
+.start-button img {
+    width: 16px;
+    height: 14px;
+    margin-right: 4px;
+}
+.start-button span {
+    font-size: 13px;
+    color: #000000;
+    font-family: "Custom";
+    padding-top: 4px;
+    font-weight: 900;
+    letter-spacing: 0.05em;
 }
 
 /* File explorer */
@@ -198,21 +272,18 @@ body, html {
     border-left: 1px solid #FFFFFF;
     border-right: 1px solid #808080;
 }
-
 .menu-bar .menu {
     list-style: none;
     margin: 0;
     padding: 0;
     display: flex;
 }
-
 .menu-bar .menu li {
     margin-right: 15px;
     font-size: 12px;
     cursor: default;
     color: #000000;
 }
-
 .menu-bar .menu li:hover {
     background-color: #000080;
     color: #FFFFFF;
@@ -229,12 +300,10 @@ body, html {
     border-left: 1px solid #FFFFFF;
     border-right: 1px solid #808080;
 }
-
 .address-bar span {
     font-size: 12px;
     margin-right: 5px;
 }
-
 .address-bar input {
     flex-grow: 1;
     height: 20px;
@@ -253,7 +322,6 @@ body, html {
     gap: 10px;
     background-color: #FFFFFF; 
 }
-
 .explorer-icon {
     width: 72px;
     text-align: center;
@@ -264,107 +332,43 @@ body, html {
     align-items: center;
     padding: 5px;
 }
-
 .explorer-icon img {
     width: 32px;
     height: 32px;
 }
-
 .explorer-icon span {
     margin-top: 5px;
     color: #000000;
 }
-
-/* Hover Effect */
 .explorer-icon:hover {
     background-color: #000080;
 }
-
 .explorer-icon:hover span {
     color: #FFFFFF;
 }
 
-/* Start Button */
-.start-button {
-    display: flex;
-    align-items: center;
-    background-color: #C0C0C0;
-    border-top: 2px solid #FFFFFF;
-    border-left: 2px solid #FFFFFF;
-    border-bottom: 2px solid #202020;
-    border-right: 2px solid #202020;
-    padding: 1px 5px !important; 
-    cursor: default;
-}
-
-/* Active State */
-.start-button:active {
-    border-top: 2px solid #404040;
-    border-left: 2px solid #404040;
-    border-bottom: 2px solid #FFFFFF;
-    border-right: 2px solid #FFFFFF;
-}
-
-.start-button img {
-    width: 16px;
-    height: 14px;
-    margin-right: 4px;
-}
-
-.start-button span {
-    font-size: 13px;
-    color: #000000;
-    font-family: "Custom";
-    padding-top: 4px;
-    font-weight: 900;
-    letter-spacing: 0.05em;
-}
-
-/* Taskbar Clock */
-.taskbar-clock {
-    display: flex;
-    align-items:normal;
-    background-color: #C0C0C0;
-    border-top: 1px solid #404040;
-    border-left: 1px solid #404040;
-    border-bottom: 1px solid #FFFFFF;
-    border-right: 1px solid #FFFFFF;
-    padding: 2px 6px;
-    padding-top: 6px;
-    cursor: default;
-    font-family: "Custom";
-    font-size: 13px;
-    color: #000000;
-    margin-right: 10px;
-    margin-left: auto; 
-}
 /* Resume Window Styling */
 .window-body h2 {
     font-size: 18px;
     font-weight: bold;
     margin-bottom: 10px;
 }
-
 .window-body h3 {
     font-size: 16px;
     margin-top: 15px;
     margin-bottom: 10px;
     text-decoration: underline;
 }
-
 .window-body p, .window-body ul {
     font-size: 14px;
     margin: 10px 0;
 }
-
 .window-body ul {
     padding-left: 20px;
 }
-
 .window-body li {
     margin-bottom: 8px;
 }
-
 .window-body a {
     color: #0000FF;
     text-decoration: underline;

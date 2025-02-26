@@ -1,38 +1,38 @@
 <!DOCTYPE html>
-    <html lang="en">
-    <head>
-    <meta charset="UTF-8">
-    <title>AD 95</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="icon" href="icons/icon.png">
-    <style>
-    /* Boot Overlay Styles */
-    #boot-overlay {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: black;
-        color: white;
-        font-family: monospace;
-        font-size: 20px;
-        padding: 20px;
-        box-sizing: border-box;
-        z-index: 9999;
-        overflow-y: auto;
-    }
-    #boot-overlay .boot-line {
-        opacity: 1; /* Appear instantly */
-    }
-    #boot-overlay .prompt {
-        margin-top: 20px;
-        opacity: 1;
-    }
-    </style>
-    </head>
-    <body>
-    <div id="wrapper">
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>AD 95</title>
+<link rel="stylesheet" href="style.css">
+<link rel="icon" href="icons/icon.png">
+<style>
+/* Boot Overlay Styles */
+#boot-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: black;
+    color: white;
+    font-family: monospace;
+    font-size: 20px;
+    padding: 20px;
+    box-sizing: border-box;
+    z-index: 9999;
+    overflow-y: auto;
+}
+#boot-overlay .boot-line {
+    opacity: 1;
+}
+#boot-overlay .prompt {
+    margin-top: 20px;
+    opacity: 1;
+}
+</style>
+</head>
+<body>
+<div id="wrapper">
     <!-- Boot Sequence Overlay -->
     <div id="boot-overlay"></div>
 
@@ -40,176 +40,176 @@
     <div class="desktop">
         <!-- Desktop Icons -->
         <div class="icon" data-window="#window-resume">
-        <img src="icons/resume.png" alt="Resume Icon">
-        <span>Resume</span>
+            <img src="icons/resume.png" alt="Resume Icon">
+            <span>Resume</span>
         </div>
         <div class="icon" data-window="#window-projects">
-        <img src="icons/projects.png" alt="Projects Icon">
-        <span>Projects</span>
+            <img src="icons/projects.png" alt="Projects Icon">
+            <span>Projects</span>
         </div>
         <div class="icon" data-window="#window-contact">
-        <img src="icons/contact.png" alt="Contact Icon">
-        <span>Contact Me</span>
+            <img src="icons/contact.png" alt="Contact Icon">
+            <span>Contact Me</span>
         </div>
         <div class="icon" data-window="#window-random">
-        <img src="icons/folder.png" alt="Folder Icon">
-        <span>Links</span>
+            <img src="icons/folder.png" alt="Folder Icon">
+            <span>Links</span>
         </div>
     </div>
 
     <!-- Application Windows -->
     <div id="window-resume" class="window" style="display: none;">
         <div class="title-bar">
-        <div class="title-bar-text">Resume</div>
-        <div class="title-bar-controls">
-            <button class="btn-minimize" aria-label="Minimize">
-            <img src="icons/minimize.png" alt="Minimize Icon">
-            </button>
-            <button class="btn-close" aria-label="Close">
-            <img src="icons/close.png" alt="Close Icon">
-            </button>
-        </div>
+            <div class="title-bar-text">Resume</div>
+            <div class="title-bar-controls">
+                <button class="btn-minimize" aria-label="Minimize">
+                    <img src="icons/minimize.png" alt="Minimize Icon">
+                </button>
+                <button class="btn-close" aria-label="Close">
+                    <img src="icons/close.png" alt="Close Icon">
+                </button>
+            </div>
         </div>
         <div class="window-body">
-        <h2>Andy Dai</h2>
-        <p><a href="mailto:dai.ad0478@gmail.com">dai.ad0478@gmail.com</a></p>
-        <h3>Education</h3>
-        <p>
-            <strong>Bachelor of Science - Specialization in Computer Science</strong><br>
-            The University of Western Ontario, London, ON
-        </p>
-        <h3>Technical Skills</h3>
-        <ul>
-            <li><strong>Programming:</strong> Python, Java, R, Assembly, C, C#, C++</li>
-            <li><strong>Web Development:</strong> HTML, CSS, JavaScript</li>
-            <li><strong>Databases:</strong> SQL, Access, Informatica Cloud/Powercenter</li>
-            <li><strong>Version Control:</strong> Git, GitHub</li>
-        </ul>
-        <h3>Professional Experience</h3>
-        <p>
-            <strong>Ontario Ministry of Health and Long Term Care, Data Engineer</strong><br>
-            Toronto, ON | May 2024–August 2024
-        </p>
-        <p>
-            <strong>Green City Development, Administrative Assistant (IT/Project Management)</strong><br>
-            Toronto, ON | May 2023–August 2023
-        </p>
+            <h2>Andy Dai</h2>
+            <p><a href="mailto:dai.ad0478@gmail.com">dai.ad0478@gmail.com</a></p>
+            <h3>Education</h3>
+            <p>
+                <strong>Bachelor of Science - Specialization in Computer Science</strong><br>
+                The University of Western Ontario, London, ON
+            </p>
+            <h3>Technical Skills</h3>
+            <ul>
+                <li><strong>Programming:</strong> Python, Java, R, Assembly, C, C#, C++</li>
+                <li><strong>Web Development:</strong> HTML, CSS, JavaScript</li>
+                <li><strong>Databases:</strong> SQL, Access, Informatica Cloud/Powercenter</li>
+                <li><strong>Version Control:</strong> Git, GitHub</li>
+            </ul>
+            <h3>Professional Experience</h3>
+            <p>
+                <strong>Ontario Ministry of Health and Long Term Care, Data Engineer</strong><br>
+                Toronto, ON | May 2024–August 2024
+            </p>
+            <p>
+                <strong>Green City Development, Administrative Assistant (IT/Project Management)</strong><br>
+                Toronto, ON | May 2023–August 2023
+            </p>
         </div>
     </div>
 
     <div id="window-projects" class="window" style="display: none;">
         <div class="title-bar">
-        <div class="title-bar-text">Projects</div>
-        <div class="title-bar-controls">
-            <button class="btn-minimize" aria-label="Minimize">
-            <img src="icons/minimize.png" alt="Minimize Icon">
-            </button>
-            <button class="btn-close" aria-label="Close">
-            <img src="icons/close.png" alt="Close Icon">
-            </button>
-        </div>
+            <div class="title-bar-text">Projects</div>
+            <div class="title-bar-controls">
+                <button class="btn-minimize" aria-label="Minimize">
+                    <img src="icons/minimize.png" alt="Minimize Icon">
+                </button>
+                <button class="btn-close" aria-label="Close">
+                    <img src="icons/close.png" alt="Close Icon">
+                </button>
+            </div>
         </div>
         <div class="window-body">
-        <p>links coming soon</p>
+            <p>links coming soon</p>
         </div>
     </div>
 
     <div id="window-contact" class="window" style="display: none;">
         <div class="title-bar">
-        <div class="title-bar-text">Contact Me</div>
-        <div class="title-bar-controls">
-            <button class="btn-minimize" aria-label="Minimize">
-            <img src="icons/minimize.png" alt="Minimize Icon">
-            </button>
-            <button class="btn-close" aria-label="Close">
-            <img src="icons/close.png" alt="Close Icon">
-            </button>
-        </div>
+            <div class="title-bar-text">Contact Me</div>
+            <div class="title-bar-controls">
+                <button class="btn-minimize" aria-label="Minimize">
+                    <img src="icons/minimize.png" alt="Minimize Icon">
+                </button>
+                <button class="btn-close" aria-label="Close">
+                    <img src="icons/close.png" alt="Close Icon">
+                </button>
+            </div>
         </div>
         <div class="window-body">
-        <p>Andy Dai</p>
-        <p>dai.ad0478@gmail.com</p>
-        <p>(416) 618 1989</p>
+            <p>Andy Dai</p>
+            <p>dai.ad0478@gmail.com</p>
+            <p>(416) 618 1989</p>
         </div>
     </div>
 
     <div id="window-random" class="window" style="display: none;">
         <div class="title-bar">
-        <div class="title-bar-text">Links</div>
-        <div class="title-bar-controls">
-            <button class="btn-minimize" aria-label="Minimize">
-            <img src="icons/minimize.png" alt="Minimize Icon">
-            </button>
-            <button class="btn-close" aria-label="Close">
-            <img src="icons/close.png" alt="Close Icon">
-            </button>
-        </div>
+            <div class="title-bar-text">Links</div>
+            <div class="title-bar-controls">
+                <button class="btn-minimize" aria-label="Minimize">
+                    <img src="icons/minimize.png" alt="Minimize Icon">
+                </button>
+                <button class="btn-close" aria-label="Close">
+                    <img src="icons/close.png" alt="Close Icon">
+                </button>
+            </div>
         </div>
         <div class="menu-bar">
-        <ul class="menu">
-            <li>File</li>
-            <li>Edit</li>
-            <li>View</li>
-            <li>Go</li>
-            <li>Favorites</li>
-            <li>Help</li>
-        </ul>
+            <ul class="menu">
+                <li>File</li>
+                <li>Edit</li>
+                <li>View</li>
+                <li>Go</li>
+                <li>Favorites</li>
+                <li>Help</li>
+            </ul>
         </div>
         <div class="address-bar">
-        <span>Address</span>
-        <input type="text" value=" C:\" readonly style="font-family: Custom;">
+            <span>Address</span>
+            <input type="text" value=" C:\" readonly style="font-family: Custom;">
         </div>
         <div class="window-body explorer-body">
-        <div class="explorer-icon" data-action="link" data-url="https://github.com/AndDD1" title="https://github.com/AndDD1">
-            <img src="icons/github.png" alt="Folder Icon">
-            <span>Github</span>
-        </div>
-        <div class="explorer-icon" data-action="link" data-url="https://archive.org/details/windows-98-icons" title="https://archive.org/details/windows-98-icons">
-            <img src="icons/world.png" alt="World Icon">
-            <span>Win95 Icons</span>
-        </div>
-        <div class="explorer-icon" data-action="link" data-url="https://www.youtube.com/watch?v=-48t4C0W90w" title="https://www.youtube.com/watch?v=-48t4C0W90w">
-            <img src="icons/music.png" alt="Music Icon">
-            <span>Break the Fall - Swsh</span>
-        </div>
+            <div class="explorer-icon" data-action="link" data-url="https://github.com/AndDD1" title="https://github.com/AndDD1">
+                <img src="icons/github.png" alt="Folder Icon">
+                <span>Github</span>
+            </div>
+            <div class="explorer-icon" data-action="link" data-url="https://archive.org/details/windows-98-icons" title="https://archive.org/details/windows-98-icons">
+                <img src="icons/world.png" alt="World Icon">
+                <span>Win95 Icons</span>
+            </div>
+            <div class="explorer-icon" data-action="link" data-url="https://www.youtube.com/watch?v=-48t4C0W90w" title="https://www.youtube.com/watch?v=-48t4C0W90w">
+                <img src="icons/music.png" alt="Music Icon">
+                <span>Break the Fall - Swsh</span>
+            </div>
         </div>
     </div>
 
     <!-- Taskbar -->
     <div class="taskbar">
         <div class="start-button">
-        <img src="icons/start.png" alt="Start Icon">
-        <span>Start</span>
+            <img src="icons/start.png" alt="Start Icon">
+            <span>Start</span>
         </div>
+        <!-- Container for dynamic taskbar icons -->
+        <div class="taskbar-icons"></div>
         <div class="taskbar-clock" id="taskbar-clock"></div>
     </div>
-    </div>
+</div>
 
-    <!-- Bootup Audio -->
-    <audio id="bootup-sound" src="boot.mp3"></audio>
+<!-- Bootup Audio -->
+<audio id="bootup-sound" src="boot.mp3"></audio>
 
-    <script>
-    // Boot Sequence Script with Skip 
-    const bootOverlay = document.getElementById('boot-overlay');
-    const bootupSound = document.getElementById('bootup-sound');
-    const bootMessages = [
-        "AD 95 BIOS v1.01",
-        "Copyright (c) 2024-25 AndDD Inc. All rights not reserved.",
-        "Bentium-S CPU at 75MHz",
-        "Memory test: 32768K OK",
-        "Loading kernel modules...",
-        "Detecting hardware...",
-        "Starting AD 95..."
-    ];
+<script>
+// Boot Sequence Script with Skip 
+const bootOverlay = document.getElementById('boot-overlay');
+const bootupSound = document.getElementById('bootup-sound');
+const bootMessages = [
+    "AD 95 BIOS v1.01",
+    "Copyright (c) 2024-25 AndDD Inc. All rights not reserved.",
+    "Bentium-S CPU at 75MHz",
+    "Memory test: 32768K OK",
+    "Loading kernel modules...",
+    "Detecting hardware...",
+    "Starting AD 95..."
+];
 
-    let currentLine = 0;
-    let bootTimeout;
-    let bootSkipped = false;
+let currentLine = 0;
+let bootTimeout;
+let bootSkipped = false;
 
-    function showNextLine() {
-    if (bootSkipped) return; // Don't add more lines if skipped
-    
-    // Show first two lines together at the start
+function showNextLine() {
+    if (bootSkipped) return;
     if (currentLine === 0) {
         for (let i = 0; i < 2; i++) {
             const line = document.createElement('div');
@@ -217,32 +217,24 @@
             line.textContent = bootMessages[i];
             bootOverlay.appendChild(line);
         }
-        // Spacer
         const spacer = document.createElement('div');
         spacer.className = 'boot-line';
-        spacer.style.height = '1em'; // Add some vertical space
+        spacer.style.height = '1em';
         bootOverlay.appendChild(spacer);
-
         currentLine = 2;
         bootTimeout = setTimeout(showNextLine, 600);
-    }
-    // Continue with remaining lines normally
-    else if (currentLine < bootMessages.length - 1) {
+    } else if (currentLine < bootMessages.length - 1) {
         const line = document.createElement('div');
         line.className = 'boot-line';
         line.textContent = bootMessages[currentLine];
         bootOverlay.appendChild(line);
         currentLine++;
         bootTimeout = setTimeout(showNextLine, 600);
-    }
-    // Last line
-    else if (currentLine === 6) {
-        // Spacer
+    } else if (currentLine === 6) {
         const spacer = document.createElement('div');
         spacer.className = 'boot-line';
         spacer.style.height = '1em';
         bootOverlay.appendChild(spacer);
-    
         const line = document.createElement('div');
         line.className = 'boot-line';
         line.textContent = bootMessages[currentLine];
@@ -250,7 +242,6 @@
         currentLine++;
         bootTimeout = setTimeout(showNextLine, 1500);
     } else {
-        // After all messages, show the prompt
         const prompt = document.createElement('div');
         prompt.className = 'prompt';
         prompt.textContent = "Press any key to boot system...";
@@ -258,34 +249,28 @@
     }
 }
 
-    function finishBoot() {
-        if (bootSkipped) return;
-        bootSkipped = true;
-        clearTimeout(bootTimeout);
-        // Remove skip event listeners so they don't trigger again
-        document.removeEventListener('keydown', skipBoot);
-        document.removeEventListener('mousedown', skipBoot);
-        // Play bootup sound
-        bootupSound.play();
-        // Fade out boot overlay and then remove it
-        bootOverlay.style.transition = "opacity 0.25s";
-        bootOverlay.style.opacity = 0;
-        setTimeout(() => {
+function finishBoot() {
+    if (bootSkipped) return;
+    bootSkipped = true;
+    clearTimeout(bootTimeout);
+    document.removeEventListener('keydown', skipBoot);
+    document.removeEventListener('mousedown', skipBoot);
+    bootupSound.play();
+    bootOverlay.style.transition = "opacity 0.25s";
+    bootOverlay.style.opacity = 0;
+    setTimeout(() => {
         bootOverlay.style.display = "none";
-        }, 1000);
-    }
+    }, 1000);
+}
 
-    // Skip boot sequence on any keyboard or mouse input
-    function skipBoot() {
-        finishBoot();
-    }
+function skipBoot() {
+    finishBoot();
+}
 
-    // Attach listeners immediately so input at any time skips the animation
-    document.addEventListener('keydown', skipBoot);
-    document.addEventListener('mousedown', skipBoot);
-
-    window.addEventListener('load', showNextLine);
-    </script>
-    <script src="script.js"></script>
-    </body>
+document.addEventListener('keydown', skipBoot);
+document.addEventListener('mousedown', skipBoot);
+window.addEventListener('load', showNextLine);
+</script>
+<script src="script.js"></script>
+</body>
 </html>
