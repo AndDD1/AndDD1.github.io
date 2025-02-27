@@ -5,7 +5,24 @@
 <title>AD 95</title>
 <link rel="stylesheet" href="style.css">
 <link rel="icon" href="icons/icon.png">
+<div id="boot-screen">Click to boot</div>
 <style>
+#boot-screen {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: black;
+    color: white;
+    font-family: monospace;
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10000;
+    cursor: pointer;
+}
 /* Boot Overlay Styles */
 #boot-overlay {
     position: absolute;
@@ -24,6 +41,7 @@
 }
 #boot-overlay .boot-line {
     opacity: 1;
+    white-space: pre;
 }
 #boot-overlay .prompt {
     margin-top: 20px;
@@ -191,89 +209,113 @@
     </div>
 </div>
 
-<!-- Bootup Audio -->
+<!-- Audio -->
 <audio id="bootup-sound" src="boot.mp3"></audio>
+<audio id="ambient-sound" src="ambient.mp3" loop></audio>
+<audio id="click-sound" src="click.mp3"></audio>
 
 <script>
-// Boot Sequence Script with Skip 
-const bootOverlay = document.getElementById('boot-overlay');
-const bootupSound = document.getElementById('bootup-sound');
-const bootMessages = [
-    "AD 95 BIOS v1.01",
-    "Copyright (c) 2024-25 AndDD Inc. All rights not reserved.",
-    "Bentium-S CPU at 75MHz",
-    "Memory test: 32768K OK",
-    "Loading kernel modules...",
-    "Detecting hardware...",
-    "Starting AD 95..."
-];
-
-let currentLine = 0;
-let bootTimeout;
-let bootSkipped = false;
-
-function showNextLine() {
-    if (bootSkipped) return;
-    if (currentLine === 0) {
-        for (let i = 0; i < 2; i++) {
+    // Boot Sequence Script with Skip 
+    const bootOverlay = document.getElementById('boot-overlay');
+    const bootupSound  = document.getElementById('bootup-sound');
+    const ambientSound = document.getElementById('ambient-sound');
+    const clickSound   = document.getElementById('click-sound');
+    const bootMessages = [
+        "AD 95 BIOS v1.01",
+        "Copyright (c) 2024-25 AndDD Inc. All rights not reserved.",
+        "Bentium-S CPU at 75MHz",
+        "Memory test: 32768K OK",
+        " ",
+        "Award Plug and Play BIOS Extension v1.0A",
+        " Detecting IDE Primary Master   ... PCemHD",
+        " Detecting IDE Primary Slave    ... PCemHD",
+        " ",
+        "System OK",
+        " ",
+        "Starting AD 95..."
+    ];
+    
+    let currentLine = 0;
+    let bootTimeout;
+    let bootSkipped = false;
+    
+    function showNextLine() {
+        if (bootSkipped) return;
+        if (currentLine === 0) {
+            for (let i = 0; i < 2; i++) {
+                const line = document.createElement('div');
+                line.className = 'boot-line';
+                line.textContent = bootMessages[i];
+                bootOverlay.appendChild(line);
+            }
+            const spacer = document.createElement('div');
+            spacer.className = 'boot-line';
+            spacer.style.height = '1em';
+            bootOverlay.appendChild(spacer);
+            currentLine = 2;
+            bootTimeout = setTimeout(showNextLine, 600);
+        } else if (currentLine < bootMessages.length - 1) {
             const line = document.createElement('div');
             line.className = 'boot-line';
-            line.textContent = bootMessages[i];
+            line.textContent = bootMessages[currentLine];
             bootOverlay.appendChild(line);
+            currentLine++;
+            bootTimeout = setTimeout(showNextLine, 600);
+        } else if (currentLine === 11) {
+            const line = document.createElement('div');
+            line.className = 'boot-line';
+            line.textContent = bootMessages[currentLine];
+            bootOverlay.appendChild(line);
+            currentLine++;
+            bootTimeout = setTimeout(showNextLine, 1500);
+        } else {
+            const prompt = document.createElement('div');
+            prompt.className = 'prompt';
+            prompt.textContent = "Press any key to boot system...";
+            bootOverlay.appendChild(prompt);
         }
-        const spacer = document.createElement('div');
-        spacer.className = 'boot-line';
-        spacer.style.height = '1em';
-        bootOverlay.appendChild(spacer);
-        currentLine = 2;
-        bootTimeout = setTimeout(showNextLine, 600);
-    } else if (currentLine < bootMessages.length - 1) {
-        const line = document.createElement('div');
-        line.className = 'boot-line';
-        line.textContent = bootMessages[currentLine];
-        bootOverlay.appendChild(line);
-        currentLine++;
-        bootTimeout = setTimeout(showNextLine, 600);
-    } else if (currentLine === 6) {
-        const spacer = document.createElement('div');
-        spacer.className = 'boot-line';
-        spacer.style.height = '1em';
-        bootOverlay.appendChild(spacer);
-        const line = document.createElement('div');
-        line.className = 'boot-line';
-        line.textContent = bootMessages[currentLine];
-        bootOverlay.appendChild(line);
-        currentLine++;
-        bootTimeout = setTimeout(showNextLine, 1500);
-    } else {
-        const prompt = document.createElement('div');
-        prompt.className = 'prompt';
-        prompt.textContent = "Press any key to boot system...";
-        bootOverlay.appendChild(prompt);
     }
-}
-
-function finishBoot() {
+    
+    function finishBoot() {
     if (bootSkipped) return;
     bootSkipped = true;
     clearTimeout(bootTimeout);
     document.removeEventListener('keydown', skipBoot);
     document.removeEventListener('mousedown', skipBoot);
-    bootupSound.play();
-    bootOverlay.style.transition = "opacity 0.25s";
-    bootOverlay.style.opacity = 0;
+    ambientSound.pause();
+    clickSound.play();
+    // Delay the bootup sound and transition by 500ms
     setTimeout(() => {
-        bootOverlay.style.display = "none";
-    }, 1000);
+        bootupSound.play();
+        bootOverlay.style.transition = "opacity 0.25s";
+        bootOverlay.style.opacity = 0;
+        setTimeout(() => {
+            bootOverlay.style.display = "none";
+        }, 1000);
+    }, 750);
 }
-
-function skipBoot() {
-    finishBoot();
-}
-
-document.addEventListener('keydown', skipBoot);
-document.addEventListener('mousedown', skipBoot);
-window.addEventListener('load', showNextLine);
+    
+    function skipBoot() {
+        finishBoot();
+    }
+    
+    const bootScreen = document.getElementById('boot-screen');
+    
+    bootScreen.addEventListener('click', function() {
+        // Hide the boot-screen overlay
+        bootScreen.style.display = 'none';
+        // Play ambient sound and start boot sequence
+        ambientSound.play().catch(function(error) {
+            console.log("Audio autoplay failed:", error);
+        });
+      
+        showNextLine();
+      
+        // Add skip event listeners after boot sequence has begun
+        document.addEventListener('keydown', skipBoot);
+        document.addEventListener('mousedown', skipBoot);
+    });
+    </script>
 </script>
 <script src="script.js"></script>
 </body>
