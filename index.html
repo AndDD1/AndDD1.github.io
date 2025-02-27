@@ -98,10 +98,11 @@
             </p>
             <h3>Technical Skills</h3>
             <ul>
-                <li><strong>Programming:</strong> Python, Java, R, Assembly, C, C#, C++</li>
+                <li><strong>Programming:</strong> Python, Java, Assembly, C, C#, C++</li>
                 <li><strong>Web Development:</strong> HTML, CSS, JavaScript</li>
                 <li><strong>Databases:</strong> SQL, Access, Informatica Cloud/Powercenter</li>
-                <li><strong>Version Control:</strong> Git, GitHub</li>
+                <li><strong>OS:</strong> Windows, Linux/Unix, MacOS</li>
+                <li><strong>Tools & Frameworks:</strong>Git, GitHub, UML, Django(Familiar), React(Familiar)</li>
             </ul>
             <h3>Professional Experience</h3>
             <p>
@@ -226,11 +227,16 @@
         "Bentium-S CPU at 75MHz",
         "Memory test: 32768K OK",
         " ",
-        "Award Plug and Play BIOS Extension v1.0A",
+        "Reward Plug and Play BIOS Extension v6.9A",
         "  Detecting IDE Primary Master   ... PCemHD",
         "  Detecting IDE Primary Slave    ... PCemHD",
         " ",
         "System OK",
+        " ",
+        "AD 95 is inspired by Windows 95, and all assets used remain the property of their rightful owners.",
+        //The icons and other assets used on this website are inspired by or derived from Microsoft Windows 95. 
+        //All trademarks, logos, and copyrighted materials used in this website are the property of their respective owners. 
+        //The use of these assets is for illustrative and educational purposes only and does not imply any official endorsement or affiliation with Microsoft.
         " ",
         "Starting AD 95..."
     ];
@@ -261,7 +267,7 @@
             bootOverlay.appendChild(line);
             currentLine++;
             bootTimeout = setTimeout(showNextLine, 600);
-        } else if (currentLine === 11) {
+        } else if (currentLine === 13) {
             const line = document.createElement('div');
             line.className = 'boot-line';
             line.textContent = bootMessages[currentLine];
@@ -287,12 +293,12 @@
     // Delay the bootup sound and transition by 500ms
     setTimeout(() => {
         bootupSound.play();
-        bootOverlay.style.transition = "opacity 0.25s";
+        bootOverlay.style.transition = "opacity 0.2s";
         bootOverlay.style.opacity = 0;
         setTimeout(() => {
             bootOverlay.style.display = "none";
-        }, 1000);
-    }, 750);
+        }, 500);
+    }, 800);
 }
     
     function skipBoot() {
@@ -305,12 +311,8 @@
         // Hide the boot-screen overlay
         bootScreen.style.display = 'none';
         // Play ambient sound and start boot sequence
-        ambientSound.play().catch(function(error) {
-            console.log("Audio autoplay failed:", error);
-        });
-      
+        ambientSound.play()
         showNextLine();
-      
         // Add skip event listeners after boot sequence has begun
         document.addEventListener('keydown', skipBoot);
         document.addEventListener('mousedown', skipBoot);
