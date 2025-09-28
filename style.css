@@ -68,6 +68,7 @@ body, html {
     color: white;
     font-size: 12px;
     cursor: default;
+    user-select: none;
 }
 .icon img {
     width: 32px;
@@ -93,6 +94,27 @@ body, html {
     background-color: #C0C0C0;
     box-shadow: none;
     z-index: 5;
+}
+.workwindow {
+    position: absolute;
+    width: 800px;
+    border-top: 2px solid #ffffff;
+    border-left: 2px solid #ffffff;
+    border-bottom: 2px solid #404040;
+    border-right: 2px solid #404040;
+    background-color: #C0C0C0;
+    box-shadow: none;
+    z-index: 5;
+}
+.workwindow-body {
+    padding: 10px;
+    background-color: #FFFFFF;
+    border-top: 1px solid #ffffff;
+    border-left: 1px solid #ffffff;
+    border-bottom: 1px solid #808080;
+    border-right: 1px solid #808080;
+    font-family: "Times New Roman", Times, serif;
+
 }
 .title-bar {
     background-color: #000080;
@@ -240,7 +262,9 @@ body, html {
     border-right: 2px solid #202020;
     padding: 1px 5px !important;
     cursor: default;
-    margin-right: 2px;  /* Added 2px spacing to the right */
+    margin-right: 2px;
+    user-select: none;
+
 }
 .start-button:active {
     border-top: 2px solid #404040;
@@ -262,6 +286,50 @@ body, html {
     letter-spacing: 0.05em;
 }
 
+.start-menu {
+    position: absolute;
+    /* Position it just above the taskbar (which is 28px tall) */
+    bottom: 28px; 
+    left: 0;
+    
+    display: flex;
+    width: 250px;
+    height: 300px;
+  
+    /* Classic Win95 3D border: top/left = light, bottom/right = dark */
+    border-top: 2px solid #ffffff;
+    border-left: 2px solid #ffffff;
+    border-bottom: 2px solid #404040;
+    border-right: 2px solid #404040;
+    background-color: #C0C0C0;
+    z-index: 1001;            
+  }
+  
+  /* Left sidebar with dark blue background and “Windows 95” text */
+  .start-menu-sidebar {
+    width: 30px;
+    background-color: #000080;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-right: 2px solid #404040;
+  }
+
+  /* Vertical “Windows 95” text in the sidebar */
+  .start-menu-sidebar-text {
+    color: #ffffff;
+    font-family: "Custom", sans-serif; 
+    font-size: 14px;
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+  }
+  
+  /* Main portion of the Start Menu */
+  .start-menu-main {
+    flex: 1; 
+    background-color: #C0C0C0;
+  }
+  
 /* File explorer */
 .menu-bar {
     background-color: #C0C0C0;
@@ -313,6 +381,21 @@ body, html {
     background-color: #FFFFFF;
 }
 
+/* Nav Bar Styles */
+.nav-bar {
+    display: flex;
+    align-items: center;
+    padding: 2px 5px;
+    background-color: #C0C0C0;
+    border-bottom: 2px solid #808080;
+    border-top: 1px solid #FFFFFF;
+    border-left: 1px solid #FFFFFF;
+    border-right: 1px solid #808080;
+}
+.nav-bar span {
+    font-size: 12px;
+    margin-right: 5px;
+}
 /* Explorer Body Styles */
 .explorer-body {
     padding: 10px;

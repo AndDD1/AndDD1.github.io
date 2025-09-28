@@ -57,9 +57,13 @@
     <!-- Desktop Content -->
     <div class="desktop">
         <!-- Desktop Icons -->
-        <div class="icon" data-window="#window-resume">
-            <img src="icons/resume.png" alt="Resume Icon">
-            <span>Resume</span>
+        <div class="icon" data-window="#window-about">
+            <img src="icons/about.png" alt="About Icon">
+            <span>About Me</span>
+        </div>
+        <div class="icon" data-window="#window-work">
+            <img src="icons/briefcase.png" alt="Work Icon">
+            <span>Works</span>
         </div>
         <div class="icon" data-window="#window-projects">
             <img src="icons/projects.png" alt="Projects Icon">
@@ -67,18 +71,18 @@
         </div>
         <div class="icon" data-window="#window-contact">
             <img src="icons/contact.png" alt="Contact Icon">
-            <span>Contact Me</span>
+            <span>Contact</span>
         </div>
-        <div class="icon" data-window="#window-random">
+        <div class="icon" data-window="#window-file">
             <img src="icons/folder.png" alt="Folder Icon">
             <span>Links</span>
         </div>
-    </div>
+
 
     <!-- Application Windows -->
-    <div id="window-resume" class="window" style="display: none;">
+    <div id="window-about" class="window" style="display: none;">
         <div class="title-bar">
-            <div class="title-bar-text">Resume</div>
+            <div class="title-bar-text">About Me</div>
             <div class="title-bar-controls">
                 <button class="btn-minimize" aria-label="Minimize">
                     <img src="icons/minimize.png" alt="Minimize Icon">
@@ -90,29 +94,67 @@
         </div>
         <div class="window-body">
             <h2>Andy Dai</h2>
-            <p><a href="mailto:dai.ad0478@gmail.com">dai.ad0478@gmail.com</a></p>
             <h3>Education</h3>
             <p>
                 <strong>Bachelor of Science - Specialization in Computer Science</strong><br>
-                The University of Western Ontario, London, ON
+                The University of Western Ontario, London, ON<br>
+                Dean's Honour List
             </p>
             <h3>Technical Skills</h3>
             <ul>
-                <li><strong>Programming:</strong> Python, Java, Assembly, C, C#, C++</li>
-                <li><strong>Web Development:</strong> HTML, CSS, JavaScript</li>
-                <li><strong>Databases:</strong> SQL, Access, Informatica Cloud/Powercenter</li>
+                <li><strong>Programming:</strong> Python, Java, Assembly, C, C++, C#, Shell</li>
+                <li><strong>Databases:</strong> SQL, PostgreSQL, Informatica</li>
                 <li><strong>OS:</strong> Windows, Linux/Unix, MacOS</li>
-                <li><strong>Tools & Frameworks:</strong>Git, GitHub, UML, Django(Familiar), React(Familiar)</li>
+                <li><strong>Tools & Frameworks:</strong> Git, GitHub, Flask, Docker, React</li>
             </ul>
             <h3>Professional Experience</h3>
             <p>
-                <strong>Ontario Ministry of Health and Long Term Care, Data Engineer</strong><br>
-                Toronto, ON | May 2024–August 2024
+                <strong>AMD - Performance Lab Intern</strong><br>
+                Markham, ON | September 2025 – Present
             </p>
             <p>
-                <strong>Green City Development, Administrative Assistant (IT/Project Management)</strong><br>
-                Toronto, ON | May 2023–August 2023
+                <strong>BMO - Software Developer</strong><br>
+                Toronto, ON | May 2025 – August 2025
             </p>
+            <p>
+                <strong>Ontario Ministry of Health - Data Engineer</strong><br>
+                Toronto, ON | May 2024 – August 2024
+            </p>
+        </div>
+    </div>
+
+        <div id="window-work" class="window workwindow" style="display: none;">
+        <div class="title-bar">
+            <div class="title-bar-text">Work Experience</div>
+            <div class="title-bar-controls">
+                <button class="btn-minimize" aria-label="Minimize">
+                    <img src="icons/minimize.png" alt="Minimize Icon">
+                </button>
+                <button class="btn-close" aria-label="Close">
+                    <img src="icons/close.png" alt="Close Icon">
+                </button>
+            </div>
+        </div>
+        <div class="menu-bar">
+            <ul class="menu">
+                <li>File</li>
+                <li>Edit</li>
+                <li>View</li>
+                <li>Go</li>
+                <li>Favorites</li>
+                <li>Help</li>
+            </ul>
+        </div>
+        <div class="nav-bar">
+            <img src="icons/minimize.png" alt="Back Icon" class="nav-icon" data-action="back">
+            <img src="icons/minimize.png" alt="Forward Icon" class="nav-icon">
+        </div>
+        <div class="address-bar">
+            <span>Address</span>
+            <input type="text" value=" https://anddd1.github.io/" readonly style="font-family: Custom;">
+        </div>
+        <div class="workwindow-body">
+            <p>links coming soon</p>
         </div>
     </div>
 
@@ -147,12 +189,12 @@
         </div>
         <div class="window-body">
             <p>Andy Dai</p>
-            <p>dai.ad0478@gmail.com</p>
+            <p><a href="mailto:dai.ad0478@gmail.com">dai.ad0478@gmail.com</a></p>
             <p>(416) 618 1989</p>
         </div>
     </div>
 
-    <div id="window-random" class="window" style="display: none;">
+    <div id="window-file" class="window" style="display: none;">
         <div class="title-bar">
             <div class="title-bar-text">Links</div>
             <div class="title-bar-controls">
@@ -198,6 +240,7 @@
         </div>
     </div>
 
+
     <!-- Taskbar -->
     <div class="taskbar">
         <div class="start-button">
@@ -208,7 +251,17 @@
         <div class="taskbar-icons"></div>
         <div class="taskbar-clock" id="taskbar-clock"></div>
     </div>
-</div>
+
+    <!-- Start Menu -->
+    <div id="start-menu" class="start-menu" style="display: none;">
+        <div class="start-menu-sidebar">
+          <span class="start-menu-sidebar-text">placeholder</span>
+        </div>
+        <div class="start-menu-main">
+          <!-- under construction -->
+        </div>
+      </div>
+
 
 <!-- Audio -->
 <audio id="bootup-sound" src="boot.mp3"></audio>
@@ -216,7 +269,7 @@
 <audio id="click-sound" src="click.mp3"></audio>
 
 <script>
-    // Boot Sequence Script with Skip 
+    // Boot Sequence Script 
     const bootOverlay = document.getElementById('boot-overlay');
     const bootupSound  = document.getElementById('bootup-sound');
     const ambientSound = document.getElementById('ambient-sound');
@@ -236,7 +289,6 @@
         "AD 95 is inspired by Windows 95, and all assets used remain the property of their rightful owners.",
         //The icons and other assets used on this website are inspired by or derived from Microsoft Windows 95. 
         //All trademarks, logos, and copyrighted materials used in this website are the property of their respective owners. 
-        //The use of these assets is for illustrative and educational purposes only and does not imply any official endorsement or affiliation with Microsoft.
         " ",
         "Starting AD 95..."
     ];

@@ -6,11 +6,28 @@ document.addEventListener('DOMContentLoaded', () => {
     const windowOffsetIncrement = 15; // Amount to offset each new window
 
     const startButton = document.querySelector('.start-button');
-    const wrapper = document.getElementById('wrapper');
+    const startMenu = document.getElementById('start-menu');
 
-    startButton.addEventListener('click', () => {
-        startButton.classList.toggle('active');
+    startButton.addEventListener('click', (e) => {
+      // Stop the click from bubbling up and closing the menu immediately
+      e.stopPropagation();
+      
+      startButton.classList.toggle('active');
+      if (startMenu.style.display === 'none' || startMenu.style.display === '') {
+        startMenu.style.display = 'flex'; // or 'block'
+      } else {
+        startMenu.style.display = 'none';
+      }
     });
+    
+    // (Optional) Close the menu when clicking anywhere else
+    document.addEventListener('click', () => {
+      if (startMenu.style.display === 'flex' || startMenu.style.display === 'block') {
+        startMenu.style.display = 'none';
+        startButton.classList.remove('active');
+      }
+    });
+    
 
     function makeDraggable(el) {
         const titleBar = el.querySelector('.title-bar');
